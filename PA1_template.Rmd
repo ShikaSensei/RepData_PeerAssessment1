@@ -40,7 +40,7 @@ total_steps <- df %>%
 
 total_steps %>% 
   ggplot(aes(total_steps)) + 
-  geom_histogram()
+  geom_histogram(bins = 10)
 ```
 
 Now, we compute center values (mean and median) of total steps. Since distribution is close to normal we expect them to be close.
@@ -107,7 +107,7 @@ total_steps02 <- df02%>%
 
 total_steps02 %>% 
   ggplot(aes(total_steps)) + 
-  geom_histogram()
+  geom_histogram(bins = 10)
 ```
 
 ```{r}

@@ -80,11 +80,7 @@ total_steps <- df %>%
 
 total_steps %>% 
   ggplot(aes(total_steps)) + 
-  geom_histogram()
-```
-
-```
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+  geom_histogram(bins = 10)
 ```
 
 ```
@@ -179,11 +175,7 @@ total_steps02 <- df02%>%
 
 total_steps02 %>% 
   ggplot(aes(total_steps)) + 
-  geom_histogram()
-```
-
-```
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+  geom_histogram(bins = 10)
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
