@@ -152,15 +152,15 @@ knitr::kable(na_count)
 |interval |    0|
 Only steps column contains missing values. There are 2304 (13.11%).
 
-We will fill missing data with median number of steps for interval.
+We will fill missing data with mean number of steps for interval.
 
 
 ```r
 df02 <- df %>% 
   group_by(interval) %>%
-  summarise(median = median(steps, na.rm = T)) %>% 
+  summarise(mean = mean(steps, na.rm = T)) %>% 
   inner_join(df, by = 'interval') %>%
-  mutate(steps = ifelse(is.na(steps), median, steps)) %>%
+  mutate(steps = ifelse(is.na(steps), mean, steps)) %>%
   select(date, interval, steps) %>%
   arrange(date, interval)
 ```
@@ -190,11 +190,11 @@ knitr::kable(middle_values02)
 
 
 
-| mean_steps| median|
-|----------:|------:|
-|   9503.869|  10395|
+| mean_steps|   median|
+|----------:|--------:|
+|   10766.19| 10766.19|
 
-It skewed distribution to the left and lowered center values, especially the mean.
+It didn't affect distribution much, as welll as central measurements.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
